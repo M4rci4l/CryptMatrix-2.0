@@ -9,7 +9,7 @@ import base64
 import secrets
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///mydb.sqlite3'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'https://www.pythonanywhere.com/user/MarcialRemps09/databases/database_console/mysql/MarcialRemps09$CryptMatrix_2/'
 db = SQLAlchemy(app)
 
 # ---------- ROUTES ----------
