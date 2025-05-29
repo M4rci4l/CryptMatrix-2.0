@@ -1,6 +1,5 @@
 import os
 from flask import Flask, render_template, request, jsonify
-from flask_sqlalchemy import SQLAlchemy
 from Crypto.PublicKey import RSA
 from Crypto.Cipher import PKCS1_OAEP, AES, DES, Blowfish
 from Crypto.Random import get_random_bytes
@@ -11,14 +10,7 @@ import base64
 import secrets
 
 app = Flask(__name__)
-# Use environment variables to configure the DB
-app.config['SQLALCHEMY_DATABASE_URI'] = (
-    f"mysql+pymysql://{os.getenv('MYSQL_USER')}:{os.getenv('MYSQL_PASSWORD')}"
-    f"@{os.getenv('MYSQL_HOST')}:{os.getenv('MYSQL_PORT')}/{os.getenv('MYSQL_DATABASE')}"
-)
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-db = SQLAlchemy(app)
 # ---------- ROUTES ----------
 @app.route('/')
 def default_redirect():
