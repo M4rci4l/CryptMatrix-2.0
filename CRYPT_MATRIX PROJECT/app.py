@@ -10,8 +10,9 @@ import base64
 import secrets
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://MarcialRemps09:<admin12345>@MarcialRemps09.mysql.pythonanywhere-services.com/MarcialRemps09$CryptMatrix_2'
-db = SQLAlchemy(app)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///mydatabase.db'
+ # or another DB URI
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # ---------- ROUTES ----------
 @app.route('/')
