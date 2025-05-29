@@ -4,6 +4,7 @@ from Crypto.Cipher import PKCS1_OAEP, AES, DES, Blowfish
 from Crypto.Random import get_random_bytes
 from Crypto.Util.Padding import pad, unpad
 from cryptography.fernet import Fernet
+from app import db
 import hashlib
 import base64
 import secrets
