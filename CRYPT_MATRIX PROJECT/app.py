@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, jsonify
+from flask_sqlalchemy import SQLAlchemy
 from Crypto.PublicKey import RSA
 from Crypto.Cipher import PKCS1_OAEP, AES, DES, Blowfish
 from Crypto.Random import get_random_bytes
@@ -9,7 +10,7 @@ import base64
 import secrets
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'https://www.pythonanywhere.com/user/MarcialRemps09/databases/database_console/mysql/MarcialRemps09$CryptMatrix_2/'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://MarcialRemps09:<admin12345>@MarcialRemps09.mysql.pythonanywhere-services.com/MarcialRemps09$CryptMatrix_2'
 db = SQLAlchemy(app)
 
 # ---------- ROUTES ----------
