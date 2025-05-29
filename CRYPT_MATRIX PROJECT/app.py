@@ -9,6 +9,8 @@ import base64
 import secrets
 
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///mydb.sqlite3'
+db = SQLAlchemy(app)
 
 # ---------- ROUTES ----------
 @app.route('/')
